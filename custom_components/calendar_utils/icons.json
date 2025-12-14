@@ -1,0 +1,13 @@
+{
+  "services": {
+    "get_events": {
+      "service": "mdi:calendar-search"
+    },
+    "update_event_by_uid": {
+      "service": "mdi:calendar-edit"
+    },
+    "delete_event_by_uid": {
+      "service": "mdi:calendar-remove"
+    }
+  }
+}

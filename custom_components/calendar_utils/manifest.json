@@ -1,0 +1,13 @@
+{
+  "domain": "calendar_utils",
+  "name": "Calendar Utils",
+  "codeowners": ["@swehog"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/swehog/hacs_calendar_utils",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/swehog/hacs_calendar_utils/issues",
+  "single_config_entry": true,
+  "version": "2025.12.1"
+}

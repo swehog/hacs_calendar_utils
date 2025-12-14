@@ -1,0 +1,87 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Calendar Utils is already configured"
+        },
+        "step": {
+            "user": {}
+        }
+    },
+    "services": {
+        "delete_event_by_uid": {
+            "description": "Delete an event from an calendar.",
+            "fields": {
+                "uid": {
+                    "description": "UID of event to be deleted.",
+                    "name": "UID"
+                    },
+                "recurrence_id": {
+                        "description": "Recurrence ID.",
+                        "name": "Recurrence ID"
+                    },
+                "recurrence_range": {
+                        "description": "Recurrence range.",
+                        "name": "Recurrence range"
+                    }
+            },
+            "name": "Delete event by UID"
+        },
+        "update_event_by_uid": {
+            "description": "Updates an calendar event.",
+            "fields": {
+                "description": {
+                    "description": "A more complete description of the event than the one provided by the summary.",
+                    "name": "Description"
+                },
+                "end_date": {
+                    "description": "The date the all-day event should end (exclusive).",
+                    "name": "End date"
+                },
+                "end_date_time": {
+                    "description": "The date and time the event should end.",
+                    "name": "End time"
+                },
+                "in": {
+                    "description": "Days or weeks that you want to create the event in.",
+                    "name": "In"
+                },
+                "location": {
+                    "description": "The location of the event.",
+                    "name": "Location"
+                },
+                "start_date": {
+                    "description": "The date the all-day event should start.",
+                    "name": "Start date"
+                },
+                "start_date_time": {
+                    "description": "The date and time the event should start.",
+                    "name": "Start time"
+                },
+                "summary": {
+                    "description": "Defines the short summary or subject for the event.",
+                    "name": "Summary"
+                }
+            },
+            "name": "Update event by UID"
+        },
+        "get_events": {
+            "description": "Retrieves events on a calendar within a time range.",
+            "fields": {
+                "duration": {
+                    "description": "Returns active events from Start time for the specified duration.",
+                    "name": "Duration"
+                },
+                "end_date_time": {
+                    "description": "Returns active events before this time (exclusive). Cannot be used with Duration.",
+                    "name": "End time"
+                },
+                "start_date_time": {
+                    "description": "Returns active events after this time (exclusive). When not set, defaults to now.",
+                    "name": "Start time"
+                }
+            },
+            "name": "Get events"
+        }
+    },
+    "title": "Calendar Utils"
+}
