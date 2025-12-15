@@ -8,20 +8,46 @@
     }
   },
   "services": {
+    "ensure_event_exists": {
+      "description": "Adds a calendar event if it does not already exist.",
+      "fields": {
+        "description": {
+          "description": "A more complete description of the event than the one provided by the summary.",
+          "name": "Description"
+        },
+        "end_date": {
+          "description": "The date the all-day event should end (exclusive).",
+          "name": "End date"
+        },
+        "end_date_time": {
+          "description": "The date and time the event should end.",
+          "name": "End time"
+        },
+        "location": {
+          "description": "The location of the event.",
+          "name": "Location"
+        },
+        "start_date": {
+          "description": "The date the all-day event should start.",
+          "name": "Start date"
+        },
+        "start_date_time": {
+          "description": "The date and time the event should start.",
+          "name": "Start time"
+        },
+        "summary": {
+          "description": "Defines the short summary or subject for the event.",
+          "name": "Summary"
+        }
+      },
+      "name": "Ensure event exists"
+    },
     "delete_event": {
       "description": "Delete an event from an calendar.",
       "fields": {
         "uid": {
           "description": "UID of event to be deleted.",
           "name": "UID"
-        },
-          "recurrence_id": {
-            "description": "Recurrence ID.",
-            "name": "Recurrence ID"
-        },
-          "recurrence_range": {
-            "description": "Recurrence range.",
-            "name": "Recurrence range"
         }
       },
       "name": "Delete event"

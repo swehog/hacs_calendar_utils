@@ -33,7 +33,7 @@ async def _async_update_event_service(
 ) -> None:
     """Update an event in calendar."""
     params = {
-        "event": {
+        CONF_EVENT: {
             k: v
             for k, v in call.data.items()
             if k

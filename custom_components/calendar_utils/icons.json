@@ -1,5 +1,8 @@
 {
   "services": {
+    "ensure_event_exists": {
+      "service": "mdi:calendar-plus"
+    },
     "get_events": {
       "service": "mdi:calendar-search"
     },

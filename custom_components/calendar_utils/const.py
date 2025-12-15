@@ -39,7 +39,7 @@ EVENT_DURATION = const.EVENT_DURATION
 LIST_EVENT_FIELDS = {*const.LIST_EVENT_FIELDS, EVENT_UID}
 
 # Services
-CREATE_EVENT_SERVICE: Final = "create_event"
+ENSURE_EVENT_EXISTS_SERVICE = "ensure_event_exists"
 DELETE_EVENT_BY_UID_SERVICE: Final = "delete_event_by_uid"
 UPDATE_EVENT_BY_UID_SERVICE: Final = "update_event_by_uid"
 GET_EVENTS_SERVICE: Final = "get_events"

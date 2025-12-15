@@ -34,14 +34,25 @@ Only one event can be updated per service call, and only one calendar can be tar
 
 ## YAML Examples
 
+### Ensure Event Exists (create event if it does not exists)
+```yaml
+action: calendar_utils.ensure_event_exists
+target:
+  entity_id: calendar.my_calendar
+data:
+  summary: 'Event Title'
+  start_date: '2025-12-14'
+  end_date: '2025-12-15'
+```
+
 ### Get Events from one calendar
 ```yaml
 action: calendar_utils.get_events
 target:
   entity_id: calendar.my_calendar
 data:
-  start_date: '2025-12-13T00:00:00'
-  end_date: '2025-12-14T00:00:00'
+  start_date: '2025-12-13'
+  end_date: '2025-12-14'
 ```
 
 ### Get Events from multiple calendars
@@ -52,8 +63,8 @@ target:
     - calendar.my_calendar
     - calendar.my_other_calendar
 data:
-  start_date: '2025-12-13T00:00:00'
-  end_date: '2025-12-14T00:00:00'
+  start_date: '2025-12-13'
+  end_date: '2025-12-14'
 ```
 
 ### Delete an Event by UID
@@ -66,6 +77,7 @@ data:
 ```
 
 ### Update an Event by UID
+> **Note:** `start_date(_time)` and `end_date(_time)` are currently required, even if unchanged.
 ```yaml
 action: calendar_utils.update_event_by_uid
 target:
@@ -73,8 +85,8 @@ target:
 data:
   uid: '12345-abcdef-67890'
   summary: 'Updated Event Title'
-  start: '2025-12-13T10:00:00'
-  end: '2025-12-13T11:00:00'
+  start_date: '2025-12-13'
+  end_date: '2025-12-13'
 ```
 
 ## Installation via HACS
