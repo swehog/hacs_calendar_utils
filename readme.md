@@ -14,6 +14,11 @@ Calendar Utils fills this gap by exposing additional services that make event UI
 
 ## Services
 
+### `calendar_utils.ensure_event_exists`
+Makes sure a calendar event exists by creating it when no matching event is found.
+When a matching event is present, no action is taken.
+Only one calendar can be targeted per service call.
+
 ### `calendar_utils.get_events`
 Retrieves events from one or multiple calendars and includes their UIDs (when supported by the calendar provider).
 This service may return multiple events and is typically used to discover the UID required for further operations.
