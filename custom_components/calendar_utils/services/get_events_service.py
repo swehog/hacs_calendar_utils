@@ -5,7 +5,15 @@ import dataclasses
 import datetime
 from typing import Any
 
-from homeassistant.components.calendar import CalendarEntity, _event_dict_factory
+from homeassistant.components.calendar import CalendarEntity
+
+try:
+    # Home Assistant 2026.10+
+    from homeassistant.components.calendar.helper import (
+        event_dict_factory as _event_dict_factory,
+    )
+except ImportError:
+    from homeassistant.components.calendar import _event_dict_factory
 from homeassistant.core import ServiceCall
 from homeassistant.util import dt as dt_util
 from homeassistant.util.json import JsonValueType

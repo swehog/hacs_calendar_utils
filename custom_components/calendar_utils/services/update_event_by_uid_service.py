@@ -1,10 +1,12 @@
 """Get events service for Calendar Utils."""
 
-from homeassistant.components.calendar import (
-    CONF_EVENT,
-    CalendarEntity,
-    _validate_timespan,
-)
+from homeassistant.components.calendar import CONF_EVENT, CalendarEntity
+
+try:
+    # Home Assistant 2026.10+
+    from homeassistant.components.calendar.services import _validate_timespan
+except ImportError:
+    from homeassistant.components.calendar import _validate_timespan
 from homeassistant.core import ServiceCall, ServiceResponse
 
 from ..const import (
