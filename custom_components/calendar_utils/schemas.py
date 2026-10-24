@@ -4,14 +4,26 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.components.calendar import (
-    MIN_NEW_EVENT_DURATION,
-    _as_local_timezone,
-    _empty_as_none,
-    _has_consistent_timezone,
-    _has_min_duration,
-    _has_positive_interval,
-)
+try:
+    # Home Assistant 2026.10+ moved these helpers to calendar.helper and made
+    # them public.
+    from homeassistant.components.calendar.helper import (
+        MIN_NEW_EVENT_DURATION,
+        as_local_timezone as _as_local_timezone,
+        empty_as_none as _empty_as_none,
+        has_consistent_timezone as _has_consistent_timezone,
+        has_min_duration as _has_min_duration,
+        has_positive_interval as _has_positive_interval,
+    )
+except ImportError:
+    from homeassistant.components.calendar import (
+        MIN_NEW_EVENT_DURATION,
+        _as_local_timezone,
+        _empty_as_none,
+        _has_consistent_timezone,
+        _has_min_duration,
+        _has_positive_interval,
+    )
 from homeassistant.helpers import config_validation as cv
 
 from .const import (
