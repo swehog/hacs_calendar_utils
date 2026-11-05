@@ -2,7 +2,15 @@
 
 import datetime
 
-from homeassistant.components.calendar import async_create_event
+try:
+    # Home Assistant 2026.11+
+    from homeassistant.components.calendar.services import (
+        _async_create_event as async_create_event,
+    )
+except ImportError:
+    # Home Assistant 2026.10 and older
+    from homeassistant.components.calendar import async_create_event
+
 from homeassistant.core import ServiceCall, ServiceResponse
 from homeassistant.util import dt as dt_util
 
